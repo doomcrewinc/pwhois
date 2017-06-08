@@ -32,9 +32,6 @@ if(($whoisinfo = fsockopen($server,$port)) == true)
 <form action="" method="post">
 <div id="lookup_form">
 <input type="text" name="domain" value="">
-<select name="extension">
-<option value=""></option>
-</select>
 <input type="submit" value="Perform lookup">
 </div>
 </form>
