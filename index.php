@@ -2,7 +2,7 @@
  
 if(isset($_POST['domain'])){ 
 $domainname = $_POST['domain'];
-$server = "whois.crsnic.net";
+$server = "whois.verisign-grs.com";
 $port=43;
  
 if(($whoisinfo = fsockopen($server,$port)) == true)
