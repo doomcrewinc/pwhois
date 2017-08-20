@@ -1282,7 +1282,7 @@ function QueryWhoisServer($whoisserver, $domain) {
 <body>
 <div class="container">
     <div class="header">
-        <h1>Berserkers.net down and dirty DNS Utilities</h1>
+        <h1>Berserkers down and dirty utilities</h1>
     </div>
     <div class="nav">
         <ul class="nav nav-pills">
