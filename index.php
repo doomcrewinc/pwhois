@@ -1264,9 +1264,10 @@ function QueryWhoisServer($whoisserver, $domain) {
 	return $res;
 }
 ?>
+<!DOCTYPE html>
 <html>
 <head>
-<title>berserkers.net quick and dirty utils</title>
+<title>Berserkers.net quick and dirty utils</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -1276,28 +1277,58 @@ function QueryWhoisServer($whoisserver, $domain) {
 <meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="/css/style.css">
-
 </head>
 
 <body>
-<form action="<?=$_SERVER['PHP_SELF'];?>">
-<p><b><label for="domain">Domain/IP Address:</label></b> <input type="text" name="domain" id="domain" value="<?=$domain;?>"> <input class="btn btn-dark" type="submit" value="Lookup"></p>
-</form>
-<?php
-if($domain) {
-	$domain = trim($domain);
-	if(substr(strtolower($domain), 0, 7) == "http://") $domain = substr($domain, 7);
-	if(substr(strtolower($domain), 0, 4) == "www.") $domain = substr($domain, 4);
-	if(ValidateIP($domain)) {
-		$result = LookupIP($domain);
-	}
-	elseif(ValidateDomain($domain)) {
-		$result = LookupDomain($domain);
-	}
-	else die("ID10T Error!");
-	echo "<pre>\n" . $result . "\n</pre>\n";
-}
-?>
+<div class="blended_grid">
+    <div class="header">
+        <h1>Berserkers.net down and dirty DNS Utilities</h1>
+    </div>
+    <div class="nav">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+        </ul>
+    </div>
+    <div class="content">
+        <form action="<?=$_SERVER['PHP_SELF'];?>">
+            <p><b><label for="domain">Domain/IP Address:</label></b> <input type="text" name="domain" id="domain" value="<?=$domain;?>"> <input class="btn btn-dark" type="submit" value="Lookup"></p>
+        </form>
+        <?php
+        if($domain) {
+            $domain = trim($domain);
+            if(substr(strtolower($domain), 0, 7) == "http://") $domain = substr($domain, 7);
+            if(substr(strtolower($domain), 0, 4) == "www.") $domain = substr($domain, 4);
+            if(ValidateIP($domain)) {
+                $result = LookupIP($domain);
+            }
+            elseif(ValidateDomain($domain)) {
+                $result = LookupDomain($domain);
+            }
+            else die("ID10T Error!");
+            echo "<pre>\n" . $result . "\n</pre>\n";
+        }
+        ?>
+
+    </div>
+    <div class="footer">
+        &copy; <?php
+        $copyYear = 2014;
+        $curYear = date('Y');
+        echo $copyYear . (($copyYear != $curYear) ? '-' . $curYear : '');
+        ?> Berserkers, Inc.
+    </div>
+</div>
 </body>
 </html>
 
