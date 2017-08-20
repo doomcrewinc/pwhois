@@ -1280,7 +1280,7 @@ function QueryWhoisServer($whoisserver, $domain) {
 </head>
 
 <body>
-<div class="blended_grid">
+<div class="container">
     <div class="header">
         <h1>Berserkers.net down and dirty DNS Utilities</h1>
     </div>
