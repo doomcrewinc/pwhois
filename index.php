@@ -1287,10 +1287,10 @@ function QueryWhoisServer($whoisserver, $domain) {
     <div class="nav">
         <ul class="nav nav-pills">
             <li class="nav-item">
-                <a class="nav-link active" href="#">Active</a>
+                <a class="nav-link active" href="#">WHOIS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">DNS BL</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
