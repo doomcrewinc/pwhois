@@ -1281,7 +1281,7 @@ function QueryWhoisServer($whoisserver, $domain) {
 
 <body>
 <form action="<?=$_SERVER['PHP_SELF'];?>">
-<p><b><label for="domain">Domain/IP Address:</label></b> <input type="text" name="domain" id="domain" value="<?=$domain;?>"> <input type="submit" value="Lookup"></p>
+<p><b><label for="domain">Domain/IP Address:</label></b> <input type="text" name="domain" id="domain" value="<?=$domain;?>"> <input class="btn btn-dark" type="submit" value="Lookup"></p>
 </form>
 <?php
 if($domain) {
