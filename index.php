@@ -1280,10 +1280,12 @@ function QueryWhoisServer($whoisserver, $domain) {
 </head>
 
 <body>
-<div class="container">
-    <div class="header">
+<div class="container-fluid">
+    <div class="header col-sm-12">
         <h1>Berserkers down and dirty utilities</h1>
     </div>
+    <div class="col"> 1 </div>
+    <div class="col">
     <div class="nav">
         <ul class="nav nav-pills">
             <li class="nav-item">
@@ -1300,7 +1302,9 @@ function QueryWhoisServer($whoisserver, $domain) {
             </li>
         </ul>
     </div>
-    <div class="content">
+    </div>
+    <div class="col"> 3 </div>
+    <div class="content col-sm-12">
         <form action="<?=$_SERVER['PHP_SELF'];?>">
             <p><b><label for="domain">Domain/IP Address:</label></b> <input type="text" name="domain" id="domain" value="<?=$domain;?>"> <input class="btn btn-dark" type="submit" value="Lookup"></p>
         </form>
@@ -1321,12 +1325,12 @@ function QueryWhoisServer($whoisserver, $domain) {
         ?>
 
     </div>
-    <div class="footer">
+    <div class="footer col-sm-12">
         &copy; <?php
         $copyYear = 2014;
         $curYear = date('Y');
         echo $copyYear . (($copyYear != $curYear) ? '-' . $curYear : '');
-        ?> Berserkers, Inc.
+        ?> Berserkers Inc.
     </div>
 </div>
 </body>
