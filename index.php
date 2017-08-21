@@ -1278,59 +1278,77 @@ function QueryWhoisServer($whoisserver, $domain) {
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
-
 <body>
 <div class="container-fluid">
-    <div class="header col-sm-12">
-        <h1>Berserkers down and dirty utilities</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1>Berserkers down and dirty utilities</h1>
+            </div>
+        </div>
     </div>
-    <div class="col"> 1 </div>
-    <div class="col">
-    <div class="nav">
-        <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">WHOIS</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">DNS BL</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-        </ul>
-    </div>
-    </div>
-    <div class="col"> 3 </div>
-    <div class="content col-sm-12">
-        <form action="<?=$_SERVER['PHP_SELF'];?>">
-            <p><b><label for="domain">Domain/IP Address:</label></b> <input type="text" name="domain" id="domain" value="<?=$domain;?>"> <input class="btn btn-dark" type="submit" value="Lookup"></p>
-        </form>
-        <?php
-        if($domain) {
-            $domain = trim($domain);
-            if(substr(strtolower($domain), 0, 7) == "http://") $domain = substr($domain, 7);
-            if(substr(strtolower($domain), 0, 4) == "www.") $domain = substr($domain, 4);
-            if(ValidateIP($domain)) {
-                $result = LookupIP($domain);
-            }
-            elseif(ValidateDomain($domain)) {
-                $result = LookupDomain($domain);
-            }
-            else die("ID10T Error!");
-            echo "<pre>\n" . $result . "\n</pre>\n";
-        }
-        ?>
+    <div class="row">
+        <div class="navmenu col-md-4">
+        </div>
+        <div class="navmenu col-md-4">
+            <ul class="nav nav-pills justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">WHOIS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Messages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Option 4</a>
+                </li>
 
+            </ul>
+        </div>
+        <div class="navmenu col-md-4">
+        </div>
     </div>
-    <div class="footer col-sm-12">
-        &copy; <?php
-        $copyYear = 2014;
-        $curYear = date('Y');
-        echo $copyYear . (($copyYear != $curYear) ? '-' . $curYear : '');
-        ?> Berserkers Inc.
+    <div class="row">
+        <div class="lookupbox col-md-12">
+            <form action="<?=$_SERVER['PHP_SELF'];?>">
+                <p><b><label for="domain">Domain/IP Address:</label></b> <input type="text" name="domain" id="domain" value="<?=$domain;?>"> <input class="btn btn-dark" type="submit" value="Lookup"></p>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div style="overflow: auto; width 400px;height:600px;" class="content col-md-4">
+            <?php
+            if($domain) {
+                $domain = trim($domain);
+                if(substr(strtolower($domain), 0, 7) == "http://") $domain = substr($domain, 7);
+                if(substr(strtolower($domain), 0, 4) == "www.") $domain = substr($domain, 4);
+                if(ValidateIP($domain)) {
+                    $result = LookupIP($domain);
+                }
+                elseif(ValidateDomain($domain)) {
+                    $result = LookupDomain($domain);
+                }
+                else die("ID10T Error!");
+                echo "<pre>\n" . $result . "\n</pre>\n";
+            }
+            ?>
+
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+    <div class="row">
+        <div class="footer col-md-12">
+            &copy; <?php
+            $copyYear = 2014;
+            $curYear = date('Y');
+            echo $copyYear . (($copyYear != $curYear) ? '-' . $curYear : '');
+            ?> Berserkers Inc.
+        </div>
     </div>
 </div>
 </body>
