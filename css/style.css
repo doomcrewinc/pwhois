@@ -55,3 +55,21 @@ pre {
 	line-height: 50px;
 	text-align: center;
 }
+.nav>li>a.active,
+.nav>li>a:hover,
+.nav>li>a:focus {
+    color: gray;
+    background-color: #333333;
+}
+.nav-link>li>a.active,
+.nav-link>li>a:hover,
+.nav-link>li>a:focus {
+    color: gray;
+    background-color: #333333;
+}
+.nav-pills>li>a.active,
+.nav-pills>li>a:hover,
+.nav-pills>li>a:focus {
+    color: gray;
+    background-color: #333333;
+}
