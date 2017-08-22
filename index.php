@@ -1299,7 +1299,7 @@ function QueryWhoisServer($whoisserver, $domain) {
                     <a class="nav-link" href="#">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Messages</a>
+                    <a class="nav-link" href="#">Messages</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Option 4</a>
