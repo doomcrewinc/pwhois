@@ -1342,7 +1342,7 @@ function QueryWhoisServer($whoisserver, $domain) {
         </div>
     </div>
     <div class="row">
-        <div class="footer col-md-12">
+        <div class="footer col-lg-12">
             &copy; <?php
             $copyYear = 2014;
             $curYear = date('Y');
