@@ -7,13 +7,19 @@
 	font-weight: 400;
 	font-style: normal;
 }
+.rgba-primary-0 { color: rgba( 19, 19, 19,1) }	/* Main Primary color */
+.rgba-primary-1 { color: rgba(103,102,103,1) }
+.rgba-primary-2 { color: rgba( 64, 64, 64,1) }
+.rgba-primary-3 { color: rgba(  0,  0,  0,1) }
+.rgba-primary-4 { color: rgba(  2,  1,  2,1) }
+
 *{
 	padding : 0;
 	margin : 0;
 	border : 0;
 }
 body{
-	background-color : rgba(0,0,0,1);
+	background-color: #000000;
 }
 h1 {
     font-family: 'Cloister';
@@ -37,6 +43,7 @@ h1 {
 	float: left;
 	clear: none;
 	text-align: center;
+	color: #676667;
 }
 .content{
 	float: left;
@@ -54,6 +61,7 @@ pre {
 	height: 50px;
 	line-height: 50px;
 	text-align: center;
+	color: #676667;
 }
 .nav>li>a.active,
 .nav>li>a:hover,
